@@ -85,7 +85,7 @@ window.addEventListener('load', () => {
             if ( y > 0 && x >= 0 ) {
                 var LW = 1
                 var RW = ( Math.atan(y/x) / 1.5707963266948965 )
-            }//90 > angle <= 180
+            }//90 >= angle < 180
 
             if ( y <= 0 && x >= 0 ) {
                 var LW = -1
