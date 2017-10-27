@@ -75,7 +75,8 @@ window.addEventListener('load', () => {
             if (  (Math.pow(y, 2) + Math.pow(x, 2)) > 1  ){
                 x = x / (Math.pow(y, 2) + Math.pow(x, 2)) 
                 y = y / (Math.pow(y, 2) + Math.pow(x, 2))
-            }//limit total line length value to 1 for perposes of calculations so x and y dont go beond + or - 1
+            }//limit total line length value to 1 for purposes of calculations so LW and RW don't go beyond + or - 1
+            
             
             if ( y >= 0 && x < 0 ) {
                 var LW = -( Math.atan(y/x) / 1.5707963266948965 )
@@ -85,7 +86,7 @@ window.addEventListener('load', () => {
             if ( y > 0 && x >= 0 ) {
                 var LW = 1
                 var RW = ( Math.atan(y/x) / 1.5707963266948965 )
-            }//90 > angle <= 180
+            }//90 => angle < 180
 
             if ( y <= 0 && x >= 0 ) {
                 var LW = -1
