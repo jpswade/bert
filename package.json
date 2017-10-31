@@ -1,0 +1,31 @@
+{
+  "name": "bert",
+  "version": "0.0.1",
+  "description": "Bert the robot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpswade/bert.git"
+  },
+  "keywords": [
+    "robot"
+  ],
+  "author": "James Wade",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jpswade/bert/issues"
+  },
+  "homepage": "https://github.com/jpswade/bert#readme",
+  "devDependencies": {
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0"
+  },
+  "dependencies": {
+    "eslint": "^4.10.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb-base": "^12.1.0"
+  }
+}
