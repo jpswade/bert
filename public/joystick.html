@@ -4,14 +4,31 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <title>Joystick</title>
+		<link href="index.css" rel="stylesheet">
+		
+		
+		
+		
+		
+		
     </head>
     <body>
-        <div id="heading">
-            <div class="largetxt left">Joystick</div>
-            <div class="right">BAT: <span id="battery"></span> V</div>
-        </div>
-        <canvas id="joystick"></canvas>
-        <button id="tiltBtn"></button>
-        <script src="index.js"></script>
+        
+
+        <!--displaying x , y , LW and RW values-->
+        <p id="ShowXY"> </p>
+        <p id="LeftWheel"> </p>
+        <p id="RightWheel"> </p>
+        <!--displaying values end-->	
+            
+            
+            <div id="heading">
+                <div class="largetxt left">Joystick</div>
+                <div class="right">BAT: <span id="battery"></span> V</div>
+            </div>
+            <canvas id="joystick"></canvas>
+            <button id="tiltBtn"></button>
+            <script src="index.js"></script>
+
     </body>
 </html>

@@ -5,10 +5,11 @@ body, html {
 }
 
 body, button {
-    background-color: white;
-    color: #334;
+    background-color: #E9C668;
+    color: #444233;
     font-family: monospace;
 }
+
 
 #joystick {
     margin: 0 auto;
@@ -25,7 +26,7 @@ h1 {
     font-size: 2rem;
 }
 
-#tiltBtn {
+tiltBtn {
     margin-top: 1em;
     font-size: 1.5rem;
     padding: 1em 0;
@@ -47,4 +48,7 @@ h1 {
 
 .largetxt {
     font-size: 2em;
+}
+p {
+    font-size: 1rem;
 }

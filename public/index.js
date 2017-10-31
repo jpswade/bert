@@ -1,6 +1,6 @@
 window.addEventListener('load', () => {
     'use strict'
-
+    
     let byId = id => document.getElementById(id)
     let ws = new WebSocket('ws://' + window.location.host + '/ws')
     ws.binaryType = 'arraybuffer'
@@ -63,6 +63,55 @@ window.addEventListener('load', () => {
         mouseIsDown = true
         pageX = e.pageX
         pageY = e.pageY
+        
+        //math in function converting x , y to wheel movements
+        setInterval(function(){ 
+            
+            document.getElementById("ShowXY").innerHTML = "x = " + x  + " y = " + y; 
+            
+            
+
+
+            if (  (Math.pow(y, 2) + Math.pow(x, 2)) > 1  ){
+                x = x / (Math.pow(y, 2) + Math.pow(x, 2)) 
+                y = y / (Math.pow(y, 2) + Math.pow(x, 2))
+            }//limit total line length value to 1 for purposes of calculations so LW and RW don't go beyond + or - 1
+            
+            
+            if ( y >= 0 && x < 0 ) {
+                var LW = -( Math.atan(y/x) / 1.5707963266948965 )
+                var RW = 1
+            }//0 >= angle < 90
+
+            if ( y > 0 && x >= 0 ) {
+                var LW = 1
+                var RW = ( Math.atan(y/x) / 1.5707963266948965 )
+            }//90 >= angle < 180
+
+            if ( y <= 0 && x >= 0 ) {
+                var LW = -1
+                var RW = ( Math.atan(y/x) / 1.5707963266948965 )
+            }//180 >= angle <= 270
+
+            if ( y < 0 && x < 0 ) {
+                var LW = - ( Math.atan(y/x) / 1.5707963266948965 )
+                var RW = -1
+            }//270 > angle < 360
+            
+            
+            
+            LW = LW * ( Math.pow(y, 2 ) + Math.pow(x, 2) )
+            RW = RW * ( Math.pow(y, 2 ) + Math.pow(x, 2) )
+
+            document.getElementById("LeftWheel").innerHTML = 
+            "Left wheel = " + LW ;
+            document.getElementById("RightWheel").innerHTML = 
+            "Right wheel = " + RW ;
+
+        }, 100); 
+        //math in function converting x , y to wheel movements end
+        /*still needs to be converted to pulses  
+            */
     }, optionsOrUseCapture)
 
     window.addEventListener('mousemove', e => {
@@ -109,6 +158,7 @@ window.addEventListener('load', () => {
             beta = e.beta
             gamma = e.gamma
         }
+     
     })
 
     function updateTiltBtnText() {
