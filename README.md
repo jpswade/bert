@@ -41,6 +41,7 @@ The chassis will need to be appealing to the audience. Something that sticks in 
 - http://blog.nyl.io/esp8266-motor/
 - http://cdn-shop.adafruit.com/product-files/2471/0A-ESP8266__Datasheet__EN_v4.3.pdf
 - http://github.com/esp8266/Arduino
+- http://esp8266.github.io/Arduino/versions/2.3.0/
 - http://blog.the-jedi.co.uk/2015/11/26/nodemcu-motor-shield-review/
 - http://cdn.hackaday.io/files/8856378895104/user-mannual-for-esp-12e-motor-shield.pdf
 - http://community.blynk.cc/t/esp8266-12e-motor-shield-joystick-blynk/10498
