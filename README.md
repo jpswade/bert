@@ -84,3 +84,5 @@ The chassis will need to be appealing to the audience. Something that sticks in 
 - http://www.youtube.com/watch?v=EGSz-_uYLqU
 - http://www.youtube.com/watch?v=QCqxOzKNFks
 - https://web.archive.org/web/20170209144251/http://www.rudiswiki.de/wiki/WiFiCar-NodeMCU
+- https://www.slideshare.net/e2m/nodemcu-with-blynk-and-firebase
+- https://developer.ibm.com/recipes/tutorials/how-i-help-my-front-door-to-speak-using-watson/
