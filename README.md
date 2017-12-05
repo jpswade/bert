@@ -66,6 +66,7 @@ The NodeMCU ESP8266 platform was chosen over Raspberry Pi or Arduino options for
 The motors are small, low power and easy to source.
 
 - [Micro Metal Gearmotor (Extended back shaft)](http://shop.pimoroni.com/products/micro-metal-gearmotor-extended-back-shaft)
+- [50:1](https://cdn.shopify.com/s/files/1/0174/1800/files/JL-12FN20-50-06420_XG2014111401-Model.pdf?9187369518581184232)
 
 ### Related projects
 
