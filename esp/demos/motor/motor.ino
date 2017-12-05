@@ -1,19 +1,15 @@
-#include <Wire.h>
-
-// Assign Arduino Friendly Names to GPIO pins
-#define D0 16
-#define D1 5
-#define D2 4
-#define D3 0
-#define D4 2
-#define D5 14
-#define D6 12
-#define D7 13
-
 #define PWMA 5
 #define DIRA 0
 #define PWMB 4
 #define DIRB 2
+
+#define led_pin D0
+
+#define PWMA D1
+#define PWMB D2
+
+#define DIRA D3
+#define DIRB D4
 
 #define PWMHIGH 1024
 
@@ -37,15 +33,21 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  Serial.println("Motor test");
-  analogWrite(PWMA,LOW);
-  digitalWrite(DIRA,HIGH);
-  delay(1000);
-
-  Serial.println("Starting motor...");
-  Serial.println("Speed: 500");
+  Serial.println("Test Motor A Forward...");
+  digitalWrite(DIRA, HIGH);
+  
+  Serial.println("Full speed...");
   analogWrite(PWMA, PWMHIGH);
   delay(1000);
+  
+  Serial.println("Half speed Motor A...");
+  analogWrite(PWMA, 512);
+  delay(1000);
+  
+  Serial.println("Reverse Motor A...?");
+  analogWrite(DIRA, 512);
+  digitalWrite(PWMA, 1);
+  delay(1000);
 
-  Serial.println("End.");
+  Serial.println("Loop...");
 }
