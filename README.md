@@ -37,6 +37,7 @@ Some seriously cheap alternative ideas:
 - [Wooden vehicle track plans](https://woodgears.ca/tracked_vehicle/plans.html)
 - [Wooden Tank](https://www.youtube.com/watch?v=ZYvNLW1jg90)
 - [MAKING A CARDBOARD TANK PART 1 – CHASSIS AND TRACKS](https://andersmakes.wordpress.com/2014/04/10/making-a-cardboard-tank-part-1-chassis-and-tracks/)
+- [Cardboard Electric T34-88 Tank Model As Seen in World of Tanks Game](http://www.instructables.com/id/Cardboard-Electric-T34-88-Tank-Model-As-Seen-in-Wo/)
 
 ### Controller
 
@@ -66,7 +67,7 @@ The NodeMCU ESP8266 platform was chosen over Raspberry Pi or Arduino options for
 The motors are small, low power and easy to source.
 
 - [Micro Metal Gearmotor (Extended back shaft)](http://shop.pimoroni.com/products/micro-metal-gearmotor-extended-back-shaft)
-- [50:1](https://cdn.shopify.com/s/files/1/0174/1800/files/JL-12FN20-50-06420_XG2014111401-Model.pdf?9187369518581184232)
+- [50:1 Micro Metal Gearmotor (Extended back shaft)](https://cdn.shopify.com/s/files/1/0174/1800/files/JL-12FN20-50-06420_XG2014111401-Model.pdf?9187369518581184232)
 
 ### Related projects
 
