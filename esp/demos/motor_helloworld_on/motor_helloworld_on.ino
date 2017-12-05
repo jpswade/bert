@@ -6,7 +6,7 @@
 
   Note that one of the motor pins overlaps with LED pin D4, so when the left wheel is going CW, the LED light close the ESP chip will turn on
   Note that we opted to swap the motor wires on the right motor so that LOW is backwards for both motors
-
+  
   We define arbitrarily Left CW = backwards
 
   Hardware:
