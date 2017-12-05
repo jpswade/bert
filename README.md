@@ -32,6 +32,12 @@ An alternative chassis is the Zumo chassis:
 
 - [Zumo Chassis Kit](http://shop.pimoroni.com/products/zumo-chassis-kit-no-motors)
 
+Some seriously cheap alternative ideas:
+
+- [Wooden vehicle track plans](https://woodgears.ca/tracked_vehicle/plans.html)
+- [Wooden Tank](https://www.youtube.com/watch?v=ZYvNLW1jg90)
+- [MAKING A CARDBOARD TANK PART 1 – CHASSIS AND TRACKS](https://andersmakes.wordpress.com/2014/04/10/making-a-cardboard-tank-part-1-chassis-and-tracks/)
+
 ### Controller
 
 The NodeMCU ESP8266 platform was chosen over Raspberry Pi or Arduino options for a number of reasons, mainly that it has what I need at less cost. Compared to the Raspberry Pi, it has a much smaller profile. Ultimately, it does everything I need and will ultimately be more cost effective while still having a highly extendable (or “hackable”) platform at the heart of it.
