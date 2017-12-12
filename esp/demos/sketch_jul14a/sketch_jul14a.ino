@@ -1,54 +1,76 @@
 // include libraries
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
- 
+
+#define WIFI_SSID "Hspace"
+#define WIFI_PASS "3f3ada7d4a"
+
+// definitions
+#define PWMA 5 // 1,2EN aka D1 pwm left
+#define DIRA 0 // 1A,2A aka D3
+#define PWMB 4 // 3,4EN aka D2 pwm right
+#define DIRB 2 // 3A,4A aka D4
+
+#define PWMA D1
+#define PWMB D2
+#define DIRA D3
+#define DIRB D4
+
+#define STOP 0
+#define SPEEDHIGH 1024
+
+#define FORWARD 1
+#define LEFT 2
+#define RIGHT 3
+#define BACKWARD 4
+
 // configure server
 ESP8266WebServer server(80);
  
 const char *form = "<center><form action='/'>"
-"<button name='dir' type='submit' value='4'>Forward</button><br>"
-"<button name='dir' type='submit' value='1'>Left</button>&nbsp;"
-"<button name='dir' type='submit' value='2'>Right</button><br>"
-"<button name='dir' type='submit' value='3'>Reverse</button><p>"
-"<button name='dir' type='submit' value='5'>Stop</button>"
+"<button name='dir' type='submit' value='1'>Forward</button><br>"
+"<button name='dir' type='submit' value='2'>Left</button>&nbsp;"
+"<button name='dir' type='submit' value='3'>Right</button><br>"
+"<button name='dir' type='submit' value='4'>Backward</button><p>"
+"<button name='dir' type='submit' value='0'>Stop</button>"
 "</form></center>";
  
 void stop(void)
 {
-    analogWrite(5, 0);
-    analogWrite(4, 0);
+    analogWrite(PWMA, STOP);
+    analogWrite(PWMB, STOP);
 }
  
 void forward(void)
 {
-    analogWrite(5, 1023);
-    analogWrite(4, 1023);
-    digitalWrite(0, HIGH);
-    digitalWrite(2, HIGH);
+    analogWrite(PWMA, SPEEDHIGH);
+    analogWrite(PWMB, SPEEDHIGH);
+    digitalWrite(DIRA, HIGH);
+    digitalWrite(DIRB, HIGH);
 }
  
 void backward(void)
 {
-    analogWrite(5, 1023);
-    analogWrite(4, 1023);
-    digitalWrite(0, LOW);
-    digitalWrite(2, LOW);
+    analogWrite(PWMA, SPEEDHIGH);
+    analogWrite(PWMB, SPEEDHIGH);
+    digitalWrite(DIRA, LOW);
+    digitalWrite(DIRB, LOW);
 }
  
 void left(void)
 {
-    analogWrite(5, 1023);
-    analogWrite(4, 1023);
-    digitalWrite(0, LOW);
-    digitalWrite(2, HIGH);
+    analogWrite(PWMA, SPEEDHIGH);
+    analogWrite(PWMB, SPEEDHIGH);
+    digitalWrite(DIRA, LOW);
+    digitalWrite(DIRB, HIGH);
 }
  
 void right(void)
 {
-    analogWrite(5, 1023);
-    analogWrite(4, 1023);
-    digitalWrite(0, HIGH);
-    digitalWrite(2, LOW);
+    analogWrite(PWMA, SPEEDHIGH);
+    analogWrite(PWMB, SPEEDHIGH);
+    digitalWrite(DIRA, HIGH);
+    digitalWrite(DIRB, LOW);
 }
  
 void handle_form()
@@ -62,19 +84,19 @@ void handle_form()
         // chose direction
         switch (direction)
         {
-            case 1:
+            case LEFT:
                 left();
                 break;
-            case 2:
+            case RIGHT:
                 right();
                 break;
-            case 3:
+            case BACKWARD:
                 backward();
                 break;
-            case 4:
+            case FORWARD:
                 forward();
                 break;
-            case 5:
+            case STOP:
                 stop();
                 break;
         }
@@ -90,10 +112,10 @@ void handle_form()
 void setup()
 {
     // connect to wifi network
-    WiFi.begin("Hspace", "3f3ada7d4a");
+    WiFi.begin(WIFI_SSID, WIFI_PASS);
  
     // static ip, gateway, netmask
-    WiFi.config(IPAddress(192,168,1,2), IPAddress(192,168,1,1), IPAddress(255,255,255,0));
+    //WiFi.config(IPAddress(192,168,1,2), IPAddress(192,168,1,1), IPAddress(255,255,255,0));
  
     // connect
     while (WiFi.status() != WL_CONNECTED)
@@ -107,10 +129,10 @@ void setup()
     // start the webserver
     server.begin();
  
-    pinMode(5, OUTPUT); // 1,2EN aka D1 pwm left
-    pinMode(4, OUTPUT); // 3,4EN aka D2 pwm right
-    pinMode(0, OUTPUT); // 1A,2A aka D3
-    pinMode(2, OUTPUT); // 3A,4A aka D4
+    pinMode(PWMA, OUTPUT);
+    pinMode(PWMB, OUTPUT);
+    pinMode(DIRA, OUTPUT);
+    pinMode(DIRB, OUTPUT);
 }
  
 void loop()

@@ -31,22 +31,37 @@ void setup() {
   digitalWrite(DIRB, LOW);
 }
 
+void fullSpeedA(void) {
+  analogWrite(PWMA, PWMHIGH);
+}
+
+void forwardA(void) {
+  digitalWrite(DIRA, HIGH);
+}
+
+void backwardA(void) {
+  digitalWrite(DIRA, LOW);
+}
+
 void loop() {
   // put your main code here, to run repeatedly:
   Serial.println("Test Motor A Forward...");
-  digitalWrite(DIRA, HIGH);
-  
-  Serial.println("Full speed...");
-  analogWrite(PWMA, PWMHIGH);
+  fullSpeedA();
+  forwardA();
   delay(1000);
-  
-  Serial.println("Half speed Motor A...");
-  analogWrite(PWMA, 512);
+
+  Serial.println("Backwards Motor A...");
+  backwardA();
   delay(1000);
-  
-  Serial.println("Reverse Motor A...?");
-  analogWrite(DIRA, 512);
-  digitalWrite(PWMA, 1);
+
+  Serial.println("Backwards Motor B...");
+  analogWrite(PWMB, PWMHIGH);
+  digitalWrite(DIRB, LOW);
+  delay(1000);
+
+  Serial.println("Forward Motor B...");
+  analogWrite(PWMB, PWMHIGH);
+  digitalWrite(DIRB, HIGH);
   delay(1000);
 
   Serial.println("Loop...");
