@@ -48,17 +48,40 @@ The NodeMCU ESP8266 platform was chosen over Raspberry Pi or Arduino options for
 
 #### Platform
 
+As the controller is ESP8266 based we have some options for our platform.
+
+There's a number of ways to program the ESP8266 chip.
+
+#### Lua
+
+Lua is a lightweight programming language, ideal for embedded systems, but as it requires compiling it, which means a complex toolchain.
+
+- [Esp32/esp8266 lua sdk](http://github.com/Nicholas3388/LuaNode)
+- [Getting started with the NodeMCU devkit on OSX](http://github.com/nodemcu/nodemcu-devkit/wiki/Getting-Started-on-OSX)
+
+#### Arduino
+
+We're going to use the Arduino platform which allows us to leverage the Arduino IDE and extensive libraries.
+
 - [Arduino core for ESP8266 WiFi chip](http://github.com/esp8266/Arduino)
 - [ESP8266 Arduino core documentation](http://esp8266.github.io/Arduino/versions/2.3.0/)
 - [Async Web Server for ESP8266 and ESP32](http://github.com/me-no-dev/ESPAsyncWebServer)
-- [Esp32/esp8266 lua sdk](http://github.com/Nicholas3388/LuaNode)
-- [Getting started with the NodeMCU devkit on OSX](http://github.com/nodemcu/nodemcu-devkit/wiki/Getting-Started-on-OSX)
-- [https://learn.sparkfun.com/tutorials/esp8266-thing-hookup-guide/installing-the-esp8266-arduino-addon](ESP8266 Thing Hookup Guide)
+- [ESP8266 Thing Hookup Guide](https://learn.sparkfun.com/tutorials/esp8266-thing-hookup-guide/installing-the-esp8266-arduino-addon)
 - [How to Install FTDI Drivers on Mac](http://learn.sparkfun.com/tutorials/how-to-install-ftdi-drivers/mac)
+
+#### Other platforms
+
+"While there are other platforms for controlling hardware over the internet (Particle, ThingSpeak, Temboo, IFTTT), Blynk is one of the most user-friendly I’ve seen yet, and it’s also free and open-source under an MIT license"
+
+- [Control an Arduino with Your Smartphone via Blynk](https://makezine.com/2015/07/06/control-arduino-your-smartphone-via-blynk/)
+
+This might be worth a revisit in the next version.
 
 ### Motor driver
 
 - [User Manual for ESP12E Motor Shield](http://cdn.hackaday.io/files/8856378895104/user-mannual-for-esp-12e-motor-shield.pdf)
+- [HG7881 H bridge Stepper Motor Dual DC Motor Driver Controller](https://chioszrobots.com/2014/06/01/hg7881-h-bridge-stepper-motor-dual-dc-motor-driver-controller/)
+- [PUSH-PULL FOUR CHANNEL DRIVER WITH DIODES](http://www.arduino.cc/documents/datasheets/H-bridge_motor_driver.PDF)
 
 ### Parts
 
@@ -82,13 +105,11 @@ The motors are small, low power and easy to source.
 - [Arduino Lesson 15. DC Motor Reversing - L293D](http://learn.adafruit.com/adafruit-arduino-lesson-15-dc-motor-reversing/lm293d)
 - [Arduino/ESP8266 Wifi Smart Car](http://osoyoo.com/2017/01/18/smartcar/)
 - [User Manual for WiFi Car by NodeMCU (DoitCar)](http://smartarduino.gitbooks.io/user-manual-for-wifi-car-by-nodemcu-doitcar-/content/)
+- [Setting up NodeMCU ESP8266 Internet Browser WiFi Controlled Robot Car Kit](http://www.alictronix.com/archives/256)
+- [NodeMCU ESP8266 Wifi RC robot car kit 2WD Acrylic Chassis IoT Internet of Things](http://www.alictronix.com/product/2060)
 
 ## See also
 
-- http://www.alictronix.com/archives/256
-- http://www.alictronix.com/product/2060
-- http://www.arduino.cc/documents/datasheets/H-bridge_motor_driver.PDF
-- http://www.blynk.cc/
 - http://www.electrodragon.com/w/ESP_Relay_Board
 - http://www.ftdichip.com/Drivers/VCP.htm
 - http://www.gitbook.com/book/smartarduino/user-mannual-for-esp-12e-motor-shield/details
@@ -107,3 +128,4 @@ The motors are small, low power and easy to source.
 - https://web.archive.org/web/20170209144251/http://www.rudiswiki.de/wiki/WiFiCar-NodeMCU
 - https://www.slideshare.net/e2m/nodemcu-with-blynk-and-firebase
 - https://developer.ibm.com/recipes/tutorials/how-i-help-my-front-door-to-speak-using-watson/
+- https://www.geekstips.com/esp8266-arduino-tutorial-iot-code-example/
