@@ -11,13 +11,8 @@
 #define PWMB 4 // 3,4EN aka D2 pwm right
 #define DIRB 2 // 3A,4A aka D4
 
-#define PWMA D1
-#define PWMB D2
-#define DIRA D3
-#define DIRB D4
-
 #define STOP 0
-#define SPEEDHIGH 1024
+#define SPEEDHIGH 1023
 
 #define FORWARD 1
 #define LEFT 2
