@@ -13,6 +13,20 @@
 
 #define PWMHIGH 1024
 
+/* Setup IP */
+IPAddress apIP(192, 168, 4, 1);
+
+/* Setup DNS */
+const uint8_t DNS_PORT = 53;
+DNSServer dnsServer;
+
+/* Setup WebServer */
+AsyncWebServer server(80);
+AsyncWebSocket ws("/ws");
+
+void setup() {
+
+}
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(115200);
@@ -108,3 +122,6 @@ void loop() {
 
 
 }
+#include <ESPAsyncWebServer.h>
+
+
