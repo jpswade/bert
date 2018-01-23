@@ -24,9 +24,7 @@ DNSServer dnsServer;
 AsyncWebServer server(80);
 AsyncWebSocket ws("/ws");
 
-void setup() {
 
-}
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(115200);
