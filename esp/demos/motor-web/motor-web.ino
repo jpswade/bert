@@ -1,3 +1,5 @@
+// motor web - a simple concept to drive motors from a web form
+
 // include libraries
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
