@@ -3,6 +3,7 @@
 // include libraries
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
+#include "FS.h"
 
 #define WIFI_SSID "Hspace"
 #define WIFI_PASS "3f3ada7d4a"
@@ -24,13 +25,7 @@
 // configure server
 ESP8266WebServer server(80);
 
-const char *form = "<center><form action='/'>"
-"<button name='dir' type='submit' value='1'>Forward</button><br>"
-"<button name='dir' type='submit' value='2'>Left</button>&nbsp;"
-"<button name='dir' type='submit' value='3'>Right</button><br>"
-"<button name='dir' type='submit' value='4'>Backward</button><p>"
-"<button name='dir' type='submit' value='0'>Stop</button>"
-"</form><small>motor web</small></center>";
+String form = "";
 
 void stop(void)
 {
@@ -68,6 +63,26 @@ void right(void)
     analogWrite(PWMB, SPEEDHIGH);
     digitalWrite(DIRA, HIGH);
     digitalWrite(DIRB, LOW);
+}
+
+void displayFile(){
+
+  Serial.println("Prepare file system");
+  bool result = SPIFFS.begin();
+  Serial.println("SPIFFS opened: " + result);
+
+  File file = SPIFFS.open("/form.html", "r");
+  if (file) {
+    Serial.println("file open success");
+
+    while (file.available()) {
+      String line = file.readStringUntil('\n');
+      form += line + "\n";
+    }
+    file.close();
+  } else {
+    Serial.println("file open failed");
+  }
 }
 
 void handle_form()
